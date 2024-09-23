@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1 class="">Welcome to our store</h1>
+
+<div class="row my-4 text-center mx-5">
+
+{% for producto in productos %}
+
+<div class="col-md-4 p-5 ">
+    <div class="card bg-gray w-100">
+        <div class="card-body text-center">
+            <img src="{{producto.image.url}}" alt="{{producto.tipo}}" class="img-fluid w-100 " style="object-fit: cover; height: 700px;" />
+            <h1>{{producto.nombre}}</h1>
+            <p style="text-align: left;">{{producto.descripcion}}</p>
+            <h2 style="text-align: left;">${{producto.precio}}</h2>
+        </div>
+    </div>
+</div>
+
+
+{% endfor %} 
+</div>
+{% endblock %}
+
+
